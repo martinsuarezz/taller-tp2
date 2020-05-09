@@ -1,4 +1,4 @@
-# Informe TP1: Protocolo DBUS
+# Informe TP2: Recolectores y Productores
 
 **Martín Andrés Suarez**
 
