@@ -1,28 +1,28 @@
 #include "BlockingQueue.h"
 
-void BlockingQueue::push(Resource* resource){
+void BlockingQueue::push(Resource&& resource){
     std::unique_lock<std::mutex> lock(m);
     queue.push(resource);
     cv.notify_all();
 }
 
-Resource* BlockingQueue::pop(){
+Resource BlockingQueue::pop(){
     std::unique_lock<std::mutex> lock(m);
     
     while (queue.empty()){
         if (isClosed){
-            return NULL;
+            throw "Closed queue";
         }
         cv.wait(lock);
     }
 
-    Resource* resource = queue.front();
+    Resource& resource = queue.front();
     queue.pop();
 
     if (queue.empty())
         cv.notify_all();
 
-    return resource;
+    return std::move(resource);
 }
 
 int BlockingQueue::areAvailable(int ammount){
@@ -47,3 +47,10 @@ void BlockingQueue::close(){
     isClosed = true;
     cv.notify_all();
 }
+
+size_t BlockingQueue::size(){
+    std::unique_lock<std::mutex> lock(m);
+    return queue.size();
+}
+
+//BlockingQueue::~BlockingQueue(){}

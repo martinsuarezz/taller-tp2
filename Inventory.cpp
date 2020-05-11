@@ -1,17 +1,19 @@
 #include "Inventory.h"
+#include <iostream>
 
-Inventory::Inventory(){}
+//Inventory::Inventory(){}
 
-void Inventory::addResource(Resource* resource){
-    std::string resourceType = resource->getResourceType();
+void Inventory::addResource(Resource&& resource){
+    std::string resourceType = resource.getResourceType();
+    std::cout << "Storing " << resourceType << std::endl;
     if (resourceType == "wheat")
-        resources[WHEAT].push(resource);
+        resources[WHEAT].push(std::move(resource));
     else if (resourceType == "wood")
-        resources[WOOD].push(resource);
+        resources[WOOD].push(std::move(resource));
     else if (resourceType == "coal")
-        resources[COAL].push(resource);
+        resources[COAL].push(std::move(resource));
     else if (resourceType == "iron")
-        resources[IRON].push(resource);
+        resources[IRON].push(std::move(resource));
 }
 
 int Inventory::consumeResources(int wheat, int wood, int coal, int iron){
@@ -51,4 +53,12 @@ void Inventory::closeIron(){
     resources[IRON].close();
 }
 
-Inventory::~Inventory(){}
+void Inventory::printFormatedResources(){
+    printf("Recursos restantes:\n");
+    printf("   - Trigo: %lu\n", resources[WHEAT].size());
+    printf("   - Madera: %lu\n", resources[WOOD].size());
+    printf("   - Carbon: %lu\n", resources[COAL].size());
+    printf("   - Hierro: %lu\n", resources[IRON].size());
+}
+
+//Inventory::~Inventory(){}

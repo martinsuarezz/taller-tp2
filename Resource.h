@@ -9,7 +9,7 @@ class Resource{
     public:
         Resource(std::string type): type(type){};
         std::string getResourceType() const;
-        ~Resource();
+        //~Resource();
 };
 
 #endif

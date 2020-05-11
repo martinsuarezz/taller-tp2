@@ -6,14 +6,14 @@
 
 class Gatherer: public Thread{
     protected:
-        BlockingQueue& queue;
+        BlockingQueue* queue;
         Inventory& inventory;
 
     public:
-        Gatherer(BlockingQueue& queue, Inventory& inventory): queue(queue), inventory(inventory){};
+        Gatherer(BlockingQueue* queue, Inventory& inventory): queue(queue), inventory(inventory){};
         virtual void run();
         virtual void closeResource() = 0;
-        virtual ~Gatherer();
+        //virtual ~Gatherer();
 };
 
 #endif
