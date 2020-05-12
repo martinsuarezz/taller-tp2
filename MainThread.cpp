@@ -3,6 +3,8 @@
 #define GATHERER_TYPES 3
 #define PRODUCER_TYPES 3
 
+enum producers{COOKER = 3};
+
 MainThread::MainThread(char* workersFile, char* mapFile): workersFile(workersFile), mapFile(mapFile){
     for (int i = 0; i < GATHERER_TYPES; i++){
         BlockingQueue* queue = new BlockingQueue();
@@ -20,13 +22,15 @@ void MainThread::spawnSingleWorker(int type){
         worker = new Lumberjack(queues[type], this->inventory);
     else if (type == MINER)
         worker = new Miner(queues[type], this->inventory);
+    else if (type == COOKER)
+        worker = new Cooker(points, this->inventory);
     workers.push_back(worker);
     worker->start();
 }
 
 void MainThread::spawnWorkers(){
     WorkerParser workerParser(this->workersFile);
-    for (int i = 0; i < GATHERER_TYPES; i++){
+    for (int i = 0; i < 4; i++){
         for (int j = 0; j < workerParser.getAmmountWorker(i); j++){
             spawnSingleWorker(i);
         }
@@ -36,28 +40,28 @@ void MainThread::spawnWorkers(){
 void MainThread::addResources(){
     MapParser mapParser(this->mapFile);
     mapParser.addResources(queues);
-    for (int i=0; i<3; i++)
+    for (int i = 0; i < GATHERER_TYPES; i++)
         queues[i]->close();
-    /*
-    queues[FARMER]->push(Resource("wheat"));
-    queues[FARMER]->push(Resource("wheat"));
-    queues[LUMBERJACK]->push(Resource("wood"));
-    queues[MINER]->push(Resource("coal"));
-    */
+}
+
+void MainThread::joinAndDeleteWorkers(){
+    for (size_t i = 0; i < workers.size(); i++){
+        workers[i]->join();
+        delete workers[i];
+    }
 }
 
 void MainThread::run(){
     this->spawnWorkers();
     this->addResources();
-    //this->joinThreads();
-    //this->deleteWorkers();
-    //this->deleteQueues();
-    
-    for (int i = 0; i < 9; i++){
-        workers[i]->join();
-        delete workers[i];
-    }
+    this->joinAndDeleteWorkers();
     inventory.printFormatedResources();
+    points.printFormatedPoints();
+}
+
+MainThread::~MainThread(){
+    for (size_t i = 0; i < queues.size(); i++)
+        delete queues[i];
 }
 
 int main(int argc, char* argv[]){

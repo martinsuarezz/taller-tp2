@@ -6,6 +6,7 @@
 #include "MapParser.h"
 #include "Lumberjack.h"
 #include "Miner.h"
+#include "Cooker.h"
 #include "Inventory.h"
 #include "WorkerParser.h"
 #include <mutex>
@@ -17,16 +18,16 @@ class MainThread: public Thread{
         std::vector<Thread*> workers;
         std::vector<BlockingQueue*> queues;
         Inventory inventory;
+        PointsStorage points;
         void spawnWorkers();
         void spawnSingleWorker(int type);
         void addResources();
-        void joinThreads();
-        void deleteWorkers();
+        void joinAndDeleteWorkers();
 
     public:
         MainThread(char* workersFile, char* mapFile);
         void run();
-        //~MainThread();
+        ~MainThread();
 };
 
 #endif

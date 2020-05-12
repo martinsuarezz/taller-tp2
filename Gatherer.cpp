@@ -12,12 +12,11 @@ void Gatherer::run(){
             Resource resource = queue->pop();
             usleep(50000);
             std::cout << "Processing " << resource.getResourceType() << std::endl;
-            
-            std::cout << "Processing..." << resource.getResourceType() << std::endl;
             inventory.addResource(std::move(resource));
+            if (queue->areAvailable(1) == -1)
+                this->closeResource();
         }
         catch (const char* msg){
-            this->closeResource();
             return;
         }
     }

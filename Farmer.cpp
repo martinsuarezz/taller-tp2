@@ -4,6 +4,7 @@
 
 void Farmer::closeResource(){
     inventory.closeWheat();
+    printf("No hay mas trigo\n");
 }
 
 //Farmer::~Farmer(){}

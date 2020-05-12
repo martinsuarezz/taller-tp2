@@ -14,6 +14,7 @@ void Inventory::addResource(Resource&& resource){
         resources[COAL].push(std::move(resource));
     else if (resourceType == "iron")
         resources[IRON].push(std::move(resource));
+    cv.notify_all();
 }
 
 int Inventory::consumeResources(int wheat, int wood, int coal, int iron){
@@ -22,12 +23,18 @@ int Inventory::consumeResources(int wheat, int wood, int coal, int iron){
     int error = 0;
     int count = 0;
     while (count != RESOURCE_TYPES){
+        count = 0;
+        printf("intentando cocinar\n");
         for (int i = 0; i < RESOURCE_TYPES; i++){
             error = resources[i].areAvailable(needed_resources[i]);
             if (error == -1)
                 return 0;
+            
             count += error;
         }
+        if (count == RESOURCE_TYPES)
+            break;
+        printf("A esperar");
         cv.wait(lock);
     }
         
@@ -39,18 +46,22 @@ int Inventory::consumeResources(int wheat, int wood, int coal, int iron){
 
 void Inventory::closeWheat(){
     resources[WHEAT].close();
+    cv.notify_all();
 }
 
 void Inventory::closeWood(){
     resources[WOOD].close();
+    cv.notify_all();
 }
 
 void Inventory::closeCoal(){
     resources[COAL].close();
+    cv.notify_all();
 }
 
 void Inventory::closeIron(){
     resources[IRON].close();
+    cv.notify_all();
 }
 
 void Inventory::printFormatedResources(){

@@ -11,7 +11,7 @@ class Gatherer: public Thread{
 
     public:
         Gatherer(BlockingQueue* queue, Inventory& inventory): queue(queue), inventory(inventory){};
-        virtual void run();
+        void run();
         virtual void closeResource() = 0;
         //virtual ~Gatherer();
 };
