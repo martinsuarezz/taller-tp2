@@ -11,7 +11,7 @@ Resource BlockingQueue::pop(){
     
     while (queue.empty()){
         if (isClosed){
-            throw "Closed queue";
+            throw ClosedQueueException();
         }
         cv.wait(lock);
     }

@@ -8,8 +8,9 @@ class Resource{
 
     public:
         Resource(std::string type): type(type){};
+
+        // Devuelve el nombre del recurso.
         std::string getResourceType() const;
-        //~Resource();
 };
 
 #endif

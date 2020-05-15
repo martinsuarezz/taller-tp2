@@ -6,7 +6,7 @@
 #include <vector>
 #include "BlockingQueue.h"
 
-enum gatherers{FARMER, LUMBERJACK, MINER};
+enum workers_id{FARMER, LUMBERJACK, MINER, COOKER, CARPENTER, ARMORER};
 
 class MapParser{
     private:

@@ -24,12 +24,9 @@ class Inventory{
         // y no habrá en el futuro ya que se cerró alguna cola.
         int consumeResources(int wheat, int wood, int coal, int iron);
 
-        // Las siguientes funciones cierran las determinadas colas
-        // indicando que no llegarán más de ese tipo de recursos.
-        void closeWheat();
-        void closeWood();
-        void closeCoal();
-        void closeIron();
+        // Cierra las colas de recursos, indicando que no van a 
+        // llegar más.
+        void closeResources();
 
         // Imprime los recursos disponibles en el inventario.
         void printFormatedResources();

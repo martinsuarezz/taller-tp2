@@ -10,7 +10,6 @@ WorkerParser::WorkerParser(const char* fileName){
     std::string line;
     for (int i = 0; i < WORKER_TYPES; i++){
         std::getline(file, line);
-        std::cout << line << std::endl;
         for (int j = 0; j < WORKER_TYPES; j++){
             if (line.find(workerNames[j]) == std::string::npos)
                 continue;
