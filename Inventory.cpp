@@ -48,8 +48,8 @@ void Inventory::closeResources(){
 
 void Inventory::printFormatedResources(){
     printf("Recursos restantes:\n");
-    printf("   - Trigo: %zu\n", resources[WHEAT].size());
-    printf("   - Madera: %zu\n", resources[WOOD].size());
-    printf("   - Carbon: %zu\n", resources[COAL].size());
-    printf("   - Hierro: %zu\n", resources[IRON].size());
+    printf("  - Trigo: %zu\n", resources[WHEAT].size());
+    printf("  - Madera: %zu\n", resources[WOOD].size());
+    printf("  - Carbon: %zu\n", resources[COAL].size());
+    printf("  - Hierro: %zu\n", resources[IRON].size());
 }
