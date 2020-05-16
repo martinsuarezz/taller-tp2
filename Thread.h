@@ -24,7 +24,7 @@ class Thread{
         // Prohibo la copia de threads.
         Thread(const Thread&) = delete;
         Thread& operator=(const Thread&) = delete;
-        
+
         virtual ~Thread();
 };
 

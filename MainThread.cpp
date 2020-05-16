@@ -16,34 +16,35 @@ MainThread::MainThread(char* workersFile, char* mapFile):
     }
 }
 
-void MainThread::spawnSingleWorker(int type){
+int MainThread::spawnSingleWorker(int type){
+    if (type >= WORKER_TYPES)
+        return -1;
+
     Thread* worker;
-    if (type == FARMER)
+    if (type < GATHERER_TYPES)
         worker = new Gatherer(queues[type], this->inventory);
-    else if (type == LUMBERJACK)
-        worker = new Gatherer(queues[type], this->inventory);
-    else if (type == MINER)
-        worker = new Gatherer(queues[type], this->inventory);
-    else if (type == COOKER)
+    if (type == COOKER)
         worker = new Cooker(points, this->inventory);
     else if (type == CARPENTER)
         worker = new Carpenter(points, this->inventory);
     else if (type == ARMORER)
         worker = new Armourer(points, this->inventory);
-    worker->start();
-
-    if (isGatherer(type))
+    
+    if (isGatherer(type)){
         gatherers.push_back(worker);
-    else 
+        worker->start();
+    } else {
         producers.push_back(worker);
+        worker->start();
+    }
+    return 0;
 }
 
 void MainThread::spawnWorkers(){
     WorkerParser workerParser(this->workersFile);
-    for (int i = 0; i < 6; i++){
-        for (int j = 0; j < workerParser.getAmmountWorker(i); j++){
+    for (int i = 0; i < WORKER_TYPES; i++){
+        for (int j = 0; j < workerParser.getAmmountWorker(i); j++)
             spawnSingleWorker(i);
-        }
     }
 }
 

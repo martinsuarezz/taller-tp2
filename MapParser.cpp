@@ -1,5 +1,7 @@
 #include "MapParser.h"
 #include "Inventory.h"
+#include <string>
+#include <vector>
 
 void MapParser::addResources(std::vector<BlockingQueue*>& resourceQueues){
     std::ifstream file(this->filename);

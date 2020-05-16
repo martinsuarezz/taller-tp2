@@ -22,7 +22,7 @@ class MainThread: public Thread{
         Inventory inventory;
         PointsStorage points;
         void spawnWorkers();
-        void spawnSingleWorker(int type);
+        int spawnSingleWorker(int type);
         void addResources();
         void joinAndDeleteGatherers();
         void joinAndDeleteProducers();
