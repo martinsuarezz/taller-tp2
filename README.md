@@ -19,6 +19,8 @@ almacenamiento de puntos de beneficio.
 Luego de esto, el hilo principal espera y organiza la finalización de los
 trabajadores y procede a imprimir por pantalla los resultados obtenidos.
 
+![Diagrama de clases general](https://github.com/martinsuarezz/taller-tp2/blob/master/img/diagrama_clases2.png)
+
 ## Modelado de los hilos de ejecución
 
 Para implementar la ejecución multihilo desarrollé una clase abstracta
@@ -42,6 +44,8 @@ de beneficio (PointsStorage). Esta clase se encarga de obtener recursos
 del inventario y agregar los correspondientes puntos de beneficio.
 Polimórficamente las clases que heredan de Producer (Cooker, Carpenter y
 Armourer) implementan este comportamiento.
+
+![Diagrama de Thread](https://github.com/martinsuarezz/taller-tp2/blob/master/img/diagrama_clases.png)
 
 ## La lógica detrás de la finalización de la ejecución
 
