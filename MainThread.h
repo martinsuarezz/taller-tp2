@@ -26,6 +26,7 @@ class MainThread: public Thread{
         void addResources();
         void joinAndDeleteGatherers();
         void joinAndDeleteProducers();
+        void printResults();
 
     public:
         MainThread(char* workersFile, char* mapFile);

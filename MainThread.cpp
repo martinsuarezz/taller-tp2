@@ -68,14 +68,19 @@ void MainThread::joinAndDeleteProducers(){
     }
 }
 
+void MainThread::printResults(){
+    inventory.printFormatedResources();
+    printf("\n");
+    points.printFormatedPoints();
+}
+
 void MainThread::run(){
     this->spawnWorkers();
     this->addResources();
     this->joinAndDeleteGatherers();
     inventory.closeResources();
     this->joinAndDeleteProducers();
-    inventory.printFormatedResources();
-    points.printFormatedPoints();
+    this->printResults();
 }
 
 MainThread::~MainThread(){
