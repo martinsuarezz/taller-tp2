@@ -9,7 +9,7 @@ class PointsStorage{
         std::mutex m;
 
     public:
-        PointsStorage(): points(0) {};
+        PointsStorage(): points(0) {}
 
         // Se agrega la cantidad determinada de puntos.
         void addPoints(int ammount);

@@ -18,7 +18,8 @@ class Producer: public Thread{
         virtual void generatePoints() = 0;
 
     public:
-        Producer(PointsStorage& points, Inventory& inventory): points(points), inventory(inventory){};
+        Producer(PointsStorage& points, Inventory& inventory): 
+                                        points(points), inventory(inventory){}
         void run();
 };
 

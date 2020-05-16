@@ -9,6 +9,6 @@ class WorkerParser{
         int readWorkerAmmount(std::string line);
 
     public:
-        WorkerParser(const char* fileName);
+        explicit WorkerParser(const char* fileName);
         int getAmmountWorker(int workerId);
 };

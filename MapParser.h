@@ -13,7 +13,7 @@ class MapParser{
         const char* filename;
 
     public:
-        MapParser(const char* filename): filename(filename) {};
+        explicit MapParser(const char* filename): filename(filename) {}
         void addResources(std::vector<BlockingQueue*>& resourceQueues);
 };
 

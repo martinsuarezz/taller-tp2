@@ -8,7 +8,8 @@ class Carpenter: public Producer{
         void generatePoints();
 
     public:
-        Carpenter(PointsStorage& points, Inventory& inventory): Producer(points, inventory){};
+        Carpenter(PointsStorage& points, Inventory& inventory): 
+                                            Producer(points, inventory){}
 };
 
 #endif

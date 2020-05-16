@@ -8,7 +8,8 @@ class Cooker: public Producer{
         void generatePoints();
 
     public:
-        Cooker(PointsStorage& points, Inventory& inventory): Producer(points, inventory){};
+        Cooker(PointsStorage& points, Inventory& inventory): 
+                                            Producer(points, inventory){}
 };
 
 #endif

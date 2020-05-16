@@ -2,3 +2,7 @@
 *.o
 .vscode
 *.txt
+*.py
+filter_options
+*.sh
+.png

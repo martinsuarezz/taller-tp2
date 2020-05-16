@@ -13,8 +13,6 @@ class Inventory{
         std::condition_variable cv;
 
     public:
-        //Inventory();
-
         // Agrega el recurso al inventario
         void addResource(Resource&& resource);
 
@@ -30,7 +28,6 @@ class Inventory{
 
         // Imprime los recursos disponibles en el inventario.
         void printFormatedResources();
-        //~Inventory();
 };
 
 #endif

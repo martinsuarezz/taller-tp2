@@ -1,7 +1,7 @@
 #include "Inventory.h"
 #include <iostream>
-
-//Inventory::Inventory(){}
+#include <string>
+#include <utility>
 
 void Inventory::addResource(Resource&& resource){
     std::string resourceType = resource.getResourceType();
@@ -53,5 +53,3 @@ void Inventory::printFormatedResources(){
     printf("   - Carbon: %lu\n", resources[COAL].size());
     printf("   - Hierro: %lu\n", resources[IRON].size());
 }
-
-//Inventory::~Inventory(){}

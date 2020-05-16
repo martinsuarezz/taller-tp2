@@ -1,4 +1,5 @@
 #include "BlockingQueue.h"
+#include <utility>
 
 void BlockingQueue::push(Resource&& resource){
     std::unique_lock<std::mutex> lock(m);
@@ -52,5 +53,3 @@ size_t BlockingQueue::size(){
     std::unique_lock<std::mutex> lock(m);
     return queue.size();
 }
-
-//BlockingQueue::~BlockingQueue(){}

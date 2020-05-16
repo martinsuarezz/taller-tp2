@@ -7,8 +7,7 @@ void Producer::run(){
         if (this->obtainResources()){
             usleep(60000);
             this->generatePoints();
-        }
-        else{
+        } else{
             return;
         }
     }

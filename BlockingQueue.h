@@ -14,7 +14,7 @@ class BlockingQueue{
         std::condition_variable cv;
 
     public:
-        BlockingQueue(): isClosed(false){};
+        BlockingQueue(): isClosed(false){}
 
         // Obtiene el primer recurso de la cola. 
         // Pasaje por movimiento.

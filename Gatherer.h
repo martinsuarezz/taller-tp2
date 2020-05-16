@@ -10,7 +10,8 @@ class Gatherer: public Thread{
         Inventory& inventory;
 
     public:
-        Gatherer(BlockingQueue* queue, Inventory& inventory): queue(queue), inventory(inventory){};
+        Gatherer(BlockingQueue* queue, Inventory& inventory): 
+                                    queue(queue), inventory(inventory){}
         void run();
 };
 

@@ -10,6 +10,7 @@
 #include "Inventory.h"
 #include "WorkerParser.h"
 #include <mutex>
+#include <vector>
 
 class MainThread: public Thread{
     private:

@@ -8,7 +8,8 @@ class Armourer: public Producer{
         void generatePoints();
 
     public:
-        Armourer(PointsStorage& points, Inventory& inventory): Producer(points, inventory){};
+        Armourer(PointsStorage& points, Inventory& inventory):
+                                                 Producer(points, inventory){}
 };
 
 #endif
