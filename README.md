@@ -4,7 +4,7 @@
 
 **Padrón: 101.540**
 
-**Repositorio: `https://github.com/martinsuarezz/taller-tp1`**
+**Repositorio: `https://github.com/martinsuarezz/taller-tp2`**
 
 --------------
 
