@@ -7,10 +7,10 @@ class Resource{
         const std::string type;
 
     public:
-        explicit Resource(std::string type): type(type){}
+        explicit Resource(const std::string& type): type(type){}
 
         // Devuelve el nombre del recurso.
-        std::string getResourceType() const;
+        const std::string& getResourceType() const;
 };
 
 #endif

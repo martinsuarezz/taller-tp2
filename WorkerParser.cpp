@@ -24,7 +24,7 @@ int WorkerParser::getAmmountWorker(int workerId){
     return ammountWorkers[workerId];
 }
 
-int WorkerParser::readWorkerAmmount(std::string line){
+int WorkerParser::readWorkerAmmount(std::string& line){
     int index = line.find("=");
     std::string number = line.substr(index + 1);
     return std::stoi(number);

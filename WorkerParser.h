@@ -6,7 +6,7 @@
 class WorkerParser{
     private:
         int ammountWorkers[WORKER_TYPES];
-        int readWorkerAmmount(std::string line);
+        int readWorkerAmmount(std::string& line);
 
     public:
         explicit WorkerParser(const char* fileName);

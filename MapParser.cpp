@@ -11,13 +11,13 @@ void MapParser::addResources(std::vector<BlockingQueue*>& resourceQueues){
         for (size_t i = 0; i < line.size(); i++){
             const char character = line[i];
             if (character == 'T')
-                resourceQueues[FARMER]->push(Resource("wheat"));
+                resourceQueues[FARMER]->push(Resource(wheat));
             else if (character == 'M')
-                resourceQueues[LUMBERJACK]->push(Resource("wood"));
+                resourceQueues[LUMBERJACK]->push(Resource(wood));
             else if (character == 'C')
-                resourceQueues[MINER]->push(Resource("coal"));
+                resourceQueues[MINER]->push(Resource(coal));
             else if (character == 'H')
-                resourceQueues[MINER]->push(Resource("iron"));
+                resourceQueues[MINER]->push(Resource(iron));
         }
     }
 }
