@@ -24,8 +24,13 @@ bool Inventory::consumeResources(int wheat, int wood, int coal, int iron){
     while (true){
         count = 0;
         for (int i = 0; i < RESOURCE_TYPES; i++){
-            if ((status = resources[i].areAvailable(needed_resources[i])) == -1)
+            try{
+                status = resources[i].areAvailable(needed_resources[i]);
+            }
+            catch (ClosedQueueException& e){
                 return false;
+            }
+            
             count += status;
         }
         if (count == RESOURCE_TYPES)

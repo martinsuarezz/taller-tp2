@@ -28,7 +28,7 @@ class BlockingQueue{
         // Devuelve 1 si tiene más o igual cantidad de elementos
         // que ammount.
         // Devuelve 0 si tiene menos elementos que ammount.
-        // Devuelve -1 si tiene menos elementos que ammount
+        // Lanza una excepción si tiene menos elementos que ammount
         // y la cola está cerrada.
         int areAvailable(int ammount);
 

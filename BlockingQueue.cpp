@@ -27,7 +27,7 @@ int BlockingQueue::areAvailable(int ammount){
     std::unique_lock<std::mutex> lock(m);
     if ((int) queue.size() < ammount){
         if (isClosed)
-            return -1;
+            throw ClosedQueueException();
         return 0;
     }
 
