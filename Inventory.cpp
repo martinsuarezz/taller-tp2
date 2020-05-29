@@ -16,7 +16,7 @@ void Inventory::addResource(Resource&& resource){
     cv.notify_all();
 }
 
-int Inventory::consumeResources(int wheat, int wood, int coal, int iron){
+bool Inventory::consumeResources(int wheat, int wood, int coal, int iron){
     std::unique_lock<std::mutex> lock(m);
     int needed_resources[RESOURCE_TYPES] = {wheat, wood, coal, iron};
     int status = 0;
@@ -25,7 +25,7 @@ int Inventory::consumeResources(int wheat, int wood, int coal, int iron){
         count = 0;
         for (int i = 0; i < RESOURCE_TYPES; i++){
             if ((status = resources[i].areAvailable(needed_resources[i])) == -1)
-                return 0;
+                return false;
             count += status;
         }
         if (count == RESOURCE_TYPES)
@@ -36,7 +36,7 @@ int Inventory::consumeResources(int wheat, int wood, int coal, int iron){
     for (int i = 0; i < RESOURCE_TYPES; i++){
         resources[i].remove(needed_resources[i]);
     }
-    return 1;
+    return true;
 }
 
 void Inventory::closeResources(){

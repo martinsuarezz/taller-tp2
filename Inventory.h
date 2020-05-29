@@ -17,10 +17,10 @@ class Inventory{
         void addResource(Resource&& resource);
 
         // Consume los recursos en las cantidades determinadas.
-        // Devuelve 1 si los recursos están disponibles.
-        // Devuelve 0 si uno o varios recursos no están disponibles
+        // Devuelve true si los recursos están disponibles.
+        // Devuelve false si uno o varios recursos no están disponibles
         // y no habrá en el futuro ya que se cerró alguna cola.
-        int consumeResources(int wheat, int wood, int coal, int iron);
+        bool consumeResources(int wheat, int wood, int coal, int iron);
 
         // Cierra las colas de recursos, indicando que no van a 
         // llegar más.

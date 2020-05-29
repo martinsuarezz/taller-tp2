@@ -1,6 +1,6 @@
 #include "Armourer.h"
 
-int Armourer::obtainResources(){
+bool Armourer::obtainResources(){
     return inventory.consumeResources(0, 0, 2, 2);
 }
 

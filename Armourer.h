@@ -4,7 +4,7 @@
 
 class Armourer: public Producer{
     private:
-        int obtainResources();
+        bool obtainResources();
         void generatePoints();
 
     public:

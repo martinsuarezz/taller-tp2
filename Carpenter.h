@@ -4,7 +4,7 @@
 
 class Carpenter: public Producer{
     private:
-        int obtainResources();
+        bool obtainResources();
         void generatePoints();
 
     public:

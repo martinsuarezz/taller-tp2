@@ -1,6 +1,6 @@
 #include "Cooker.h"
 
-int Cooker::obtainResources(){
+bool Cooker::obtainResources(){
     return inventory.consumeResources(2, 0, 1, 0);
 }
 

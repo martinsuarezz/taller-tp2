@@ -1,6 +1,6 @@
 #include "Carpenter.h"
 
-int Carpenter::obtainResources(){
+bool Carpenter::obtainResources(){
     return inventory.consumeResources(0, 3, 0, 1);
 }
 
