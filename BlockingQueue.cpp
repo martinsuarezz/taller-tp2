@@ -20,9 +20,6 @@ Resource BlockingQueue::pop(){
     Resource& resource = queue.front();
     queue.pop();
 
-    if (queue.empty())
-        cv.notify_all();
-
     return std::move(resource);
 }
 
