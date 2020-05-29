@@ -90,8 +90,7 @@ MainThread::~MainThread(){
 }
 
 int main(int argc, char* argv[]){
-    MainThread* main = new MainThread(argv[1], argv[2]);
-    main->start();
-    main->join();
-    delete main;
+    MainThread main(argv[1], argv[2]);
+    main.start();
+    main.join();
 }
