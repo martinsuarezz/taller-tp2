@@ -2,10 +2,10 @@
 #include "Inventory.h"
 #include "PointsStorage.h"
 
-bool Carpenter::obtainResources(){
+bool Carpenter::obtainResources() const{
     return inventory.consumeResources(0, 3, 0, 1);
 }
 
-void Carpenter::generatePoints(){
+void Carpenter::generatePoints() const{
     points.addPoints(2);
 }

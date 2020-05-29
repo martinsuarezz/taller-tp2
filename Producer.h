@@ -13,11 +13,11 @@ class Producer: public Thread{
 
         // Obtiene los reecursos necesarios del inventario.
         // Cada clase que hereda de productor debe implementarlo.
-        virtual bool obtainResources() = 0;
+        virtual bool obtainResources() const = 0;
 
         // Genera puntos que agrega al contador de puntos.
         // Cada clase que hereda de productor debe implementarlo.
-        virtual void generatePoints() = 0;
+        virtual void generatePoints() const = 0;
 
     public:
         Producer(PointsStorage& points, Inventory& inventory): 

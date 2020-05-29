@@ -5,8 +5,8 @@
 // Modela un trabajador cocinero
 class Cooker: public Producer{
     private:
-        bool obtainResources();
-        void generatePoints();
+        bool obtainResources() const;
+        void generatePoints() const;
 
     public:
         Cooker(PointsStorage& points, Inventory& inventory): 

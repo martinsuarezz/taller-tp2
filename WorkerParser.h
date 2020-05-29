@@ -12,5 +12,5 @@ class WorkerParser{
         explicit WorkerParser(const char* fileName);
 
         // Devuelve la cantidad de cierto tipo de trabajador
-        int getAmmountWorker(int workerId);
+        int getAmmountWorker(int workerId) const;
 };

@@ -21,7 +21,7 @@ WorkerParser::WorkerParser(const char* fileName){
     }
 }
 
-int WorkerParser::getAmmountWorker(int workerId){
+int WorkerParser::getAmmountWorker(int workerId) const{
     return ammountWorkers[workerId];
 }
 

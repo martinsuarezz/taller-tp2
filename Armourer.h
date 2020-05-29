@@ -5,8 +5,8 @@
 // Modela un trabajador armero
 class Armourer: public Producer{
     private:
-        bool obtainResources();
-        void generatePoints();
+        bool obtainResources() const;
+        void generatePoints() const;
 
     public:
         Armourer(PointsStorage& points, Inventory& inventory):

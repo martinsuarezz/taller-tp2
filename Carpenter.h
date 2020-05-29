@@ -5,8 +5,8 @@
 // Modela un trabajador carpintero
 class Carpenter: public Producer{
     private:
-        bool obtainResources();
-        void generatePoints();
+        bool obtainResources() const;
+        void generatePoints() const;
 
     public:
         Carpenter(PointsStorage& points, Inventory& inventory): 
