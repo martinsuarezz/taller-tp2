@@ -29,7 +29,7 @@ class MainThread: public Thread{
         void printResults();
 
     public:
-        MainThread(char* workersFile, char* mapFile);
+        MainThread(const char* workersFile, const char* mapFile);
         void run();
         ~MainThread();
 };

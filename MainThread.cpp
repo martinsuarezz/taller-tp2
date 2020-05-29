@@ -8,7 +8,7 @@ static bool isGatherer(int type){
     return type <= 2;
 }
 
-MainThread::MainThread(char* workersFile, char* mapFile): 
+MainThread::MainThread(const char* workersFile, const char* mapFile): 
                                 workersFile(workersFile), mapFile(mapFile){
     for (int i = 0; i < GATHERER_TYPES; i++){
         BlockingQueue* queue = new BlockingQueue();
