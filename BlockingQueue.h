@@ -6,6 +6,8 @@
 #include "ClosedQueueException.h"
 #include "Resource.h"
 
+// Modela una cola bloqueante que solo puede ser accedida
+// por un solo hilo al mismo tiempo.
 class BlockingQueue{
     private:
         std::queue<Resource> queue;

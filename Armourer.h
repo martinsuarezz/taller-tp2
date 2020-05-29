@@ -2,6 +2,7 @@
 #define ARMOURER_H
 #include "Producer.h"
 
+// Modela un trabajador armero
 class Armourer: public Producer{
     private:
         bool obtainResources();

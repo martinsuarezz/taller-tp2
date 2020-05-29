@@ -6,6 +6,8 @@
 
 enum workers_id{FARMER, LUMBERJACK, MINER, COOKER, CARPENTER, ARMORER};
 
+// Esta clase se encarga de recibir un archivo del mapa del juego, leerlo
+// y depositar los recursos encontrados en las colas correspondientes.
 class MapParser{
     private:
         const char* filename;

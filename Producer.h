@@ -5,6 +5,7 @@
 class PointsStorage;
 class Inventory;
 
+// Esta clase abstracta modela a los productores.
 class Producer: public Thread{
     protected:
         PointsStorage& points;

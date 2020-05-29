@@ -2,6 +2,7 @@
 #define POINTSSTORAGE_H
 #include <mutex>
 
+// Esta clase modela el puntaje de la partida
 class PointsStorage{
     private:
         int points;

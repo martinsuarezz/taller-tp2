@@ -2,6 +2,7 @@
 #define RESOURCE_H
 #include <string>
 
+// Modela un recurso del juego
 class Resource{
     private:
         const std::string type;

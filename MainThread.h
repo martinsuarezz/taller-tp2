@@ -9,6 +9,7 @@
 
 class BlockingQueue;
 
+// Modela el hilo principal de ejecución del programa
 class MainThread: public Thread{
     private:
         const char* workersFile;

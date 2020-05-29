@@ -2,6 +2,7 @@
 #define THREAD_H
 #include <thread>
 
+// Clase que abstrae el funcionamiento de un thread de C++
 class Thread{
     private:
         std::thread thread;

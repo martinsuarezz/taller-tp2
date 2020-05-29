@@ -7,6 +7,9 @@ enum resourceType{WHEAT, WOOD, COAL, IRON};
 
 class Resource;
 
+// Modela el inventario del juego donde los recolectores depositan
+// sus recursos y los productores obtienen los suyos.
+// El acceso a consumeResources es atómico.
 class Inventory{
     private:
         BlockingQueue resources[RESOURCE_TYPES];

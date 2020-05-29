@@ -2,6 +2,7 @@
 #define CARPENTER_H
 #include "Producer.h"
 
+// Modela un trabajador carpintero
 class Carpenter: public Producer{
     private:
         bool obtainResources();

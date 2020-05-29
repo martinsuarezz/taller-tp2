@@ -5,6 +5,7 @@
 class BlockingQueue;
 class Inventory;
 
+// Modela al recolector
 class Gatherer: public Thread{
     protected:
         BlockingQueue* queue;
