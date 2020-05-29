@@ -1,16 +1,13 @@
 #ifndef MAIN_H
 #define MAIN_H
-#include "BlockingQueue.h"
+
 #include "Thread.h"
-#include "MapParser.h"
-#include "Gatherer.h"
-#include "Cooker.h"
-#include "Carpenter.h"
-#include "Armourer.h"
 #include "Inventory.h"
-#include "WorkerParser.h"
+#include "PointsStorage.h"
 #include <mutex>
 #include <vector>
+
+class BlockingQueue;
 
 class MainThread: public Thread{
     private:

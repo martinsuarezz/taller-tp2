@@ -1,8 +1,9 @@
 #ifndef GATHERER_H
 #define GATHERER_H
 #include "Thread.h"
-#include "BlockingQueue.h"
-#include "Inventory.h"
+
+class BlockingQueue;
+class Inventory;
 
 class Gatherer: public Thread{
     protected:

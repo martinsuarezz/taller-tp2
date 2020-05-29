@@ -1,8 +1,9 @@
 #ifndef PRODUCER_H
 #define PRODUCER_H
 #include "Thread.h"
-#include "Inventory.h"
-#include "PointsStorage.h"
+
+class PointsStorage;
+class Inventory;
 
 class Producer: public Thread{
     protected:

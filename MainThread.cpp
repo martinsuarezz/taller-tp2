@@ -1,5 +1,11 @@
 #include "MainThread.h"
-#include <unistd.h>
+#include "BlockingQueue.h"
+#include "MapParser.h"
+#include "Gatherer.h"
+#include "Cooker.h"
+#include "Carpenter.h"
+#include "Armourer.h"
+#include "WorkerParser.h"
 #include <array>
 #define GATHERER_TYPES 3
 #define PRODUCER_TYPES 3

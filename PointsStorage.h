@@ -1,7 +1,6 @@
 #ifndef POINTSSTORAGE_H
 #define POINTSSTORAGE_H
-#include "Thread.h"
-#include "Inventory.h"
+#include <mutex>
 
 class PointsStorage{
     private:

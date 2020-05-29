@@ -1,10 +1,11 @@
 #ifndef INVENTORY_H
 #define INVENTORY_H
 #include "BlockingQueue.h"
-#include "Resource.h"
 #include <mutex>
 enum resourceType{WHEAT, WOOD, COAL, IRON};
 #define RESOURCE_TYPES 4
+
+class Resource;
 
 class Inventory{
     private:

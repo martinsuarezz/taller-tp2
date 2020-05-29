@@ -1,6 +1,4 @@
-#include <iostream>
 #include <string>
-#include <fstream>
 #define WORKER_TYPES 6
 
 class WorkerParser{

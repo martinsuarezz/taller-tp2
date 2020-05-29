@@ -40,8 +40,6 @@ class BlockingQueue{
 
         // Cierra la cola indicando que no se le añadirán más elementos.
         void close();
-        
-        //~BlockingQueue();
 };
 
 #endif

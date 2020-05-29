@@ -1,7 +1,9 @@
 #include "Gatherer.h"
 #include <unistd.h>
-#include <iostream>
 #include <utility>
+#include "Resource.h"
+#include "BlockingQueue.h"
+#include "Inventory.h"
 
 void Gatherer::run(){
     while (true){

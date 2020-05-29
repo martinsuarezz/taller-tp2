@@ -1,5 +1,6 @@
 #include "WorkerParser.h"
 #include <string>
+#include <fstream>
 
 WorkerParser::WorkerParser(const char* fileName){
     const std::string workerNames[WORKER_TYPES] = {

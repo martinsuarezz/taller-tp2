@@ -1,4 +1,5 @@
 #include "Inventory.h"
+#include "Resource.h"
 #include <iostream>
 #include <string>
 #include <utility>
