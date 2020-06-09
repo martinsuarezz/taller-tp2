@@ -87,3 +87,5 @@ menos elegante. Es el hilo principal el que espera que terminen todos
 los recolectores para luego avisarle al inventario que no vendrá
 más de ningún tipo de recurso. Al no necesitar ya las clases Farmer,
 Woodcutter y Miner, las eliminé de mi modelo.
+
+**Entrega final** Todos los issues fueron resueltos correctamente. Nota: 10
